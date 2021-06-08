@@ -10,7 +10,7 @@ function App() {
      const[filterText,setFilterText]=useState('')
      const[filterList,setFilterList]=useState([])
      const[listLength,setListLength]=useState(0)
-     const[listID,setListID]=useState([665])
+     const[listID,setListID]=useState([])
      //Getting data from API//
      const fetchData = async () => {
           const response = await fetch("https://teacode-recruitment-challenge.s3.eu-central-1.amazonaws.com/users.json");
