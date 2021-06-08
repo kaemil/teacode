@@ -4,7 +4,7 @@ function SearchBar(props){
           props.filteredList(e.target.value)
           props.resetSwitch()
      }
-
+     
 return(
      <div className='contact__searchInput'>
           <input type='text' placeholder='Search...' value={props.filterText} onChange={filterTextChange}></input>

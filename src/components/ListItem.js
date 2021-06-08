@@ -1,3 +1,5 @@
+import {useEffect} from "react";
+
 function ListItem(props){
      const avatar=[]
      if(props.avatar !== null){
@@ -8,16 +10,22 @@ function ListItem(props){
      }
      //Checking checkbox status//
      const checking = ()=>{
-          const user=document.getElementById(props.userID)
-          if(user.hasAttribute('checked')){
-               user.removeAttribute('checked','')
+          if(props.listID.includes(props.userID)){
                props.deleteID(props.userID)
-          } else{
-               user.setAttribute('checked','')
+               document.getElementById(props.userID).removeAttribute('checked','')
+          } else {
                props.addID(props.userID)
+               document.getElementById(props.userID).setAttribute('checked','')
           }
      }
-     
+     useEffect(() => {
+          if(props.listID.includes(props.userID)){
+               document.getElementById(props.userID).setAttribute('checked','')
+          } else{
+               document.getElementById(props.userID).removeAttribute('checked','')
+          }
+     });
+
      return(
           <div className='contact__listItem' onClick={checking}>
                <div className='contact__avatar'>{avatar}</div>

@@ -10,7 +10,7 @@ function App() {
      const[filterText,setFilterText]=useState('')
      const[filterList,setFilterList]=useState([])
      const[listLength,setListLength]=useState(0)
-     const[listID,setListID]=useState([])
+     const[listID,setListID]=useState([665])
      //Getting data from API//
      const fetchData = async () => {
           const response = await fetch("https://teacode-recruitment-challenge.s3.eu-central-1.amazonaws.com/users.json");
@@ -62,6 +62,7 @@ function App() {
                     setFilterList(newFilteredList)
                     setListLength(newFilteredList.length)
                }
+        
      }
      //Adding or deleting ID from list displayed in console//
 
@@ -70,28 +71,30 @@ function App() {
      }
      const deleteID=(newID)=>{
           const index = listID.indexOf(newID)
-          listID.splice(index,1)
-          setListID([...listID])
+          setListID(listID.slice(0,index).concat(listID.slice(index+1)))
      }
      const resetSwitch=()=>{
           setSwitchPage(1)
-          console.log(switchPage)
+
      }
 
      //Displaying list of users ID after checking specific user//
      useEffect(() => {
-          if(listID.length !== 0 )
-          console.log(listID)
+          if(listID.length !== 0){
+               console.log(listID)
+          }
+          
      });
      return (
           <div className="contact__container">
                <div className='contact__header'><h2>List of Contacts</h2></div>
-               <SearchBar contactList={contactList} filteredText={filteredText} filteredList={filteredList} resetSwitch={resetSwitch}/>
+               <SearchBar contactList={contactList} filteredText={filteredText} filteredList={filteredList} resetSwitch={resetSwitch} listID={listID} filterList={filterList}/>
                <UsersList contactList={contactList} 
                switchPage={switchPage} 
                filterText={filterText} 
                filterList={filterList} 
                addID={addID}
+               listID={listID}
                deleteID={deleteID}
                resetSwitch={resetSwitch}
                 />
