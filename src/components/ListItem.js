@@ -3,7 +3,7 @@ import {useEffect} from "react";
 function ListItem(props){
      const avatar=[]
      if(props.avatar !== null){
-          avatar.push(<img key={props.name} src={props.avatar} alt={props.avatar}></img>)
+          avatar.push(<img key={props.name} src={props.avatar} alt='?'></img>)
      }else{
           const initial = props.name.charAt(0) + props.surname.charAt(0)
           avatar.push(initial)
