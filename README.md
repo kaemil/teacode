@@ -7,6 +7,7 @@ Interactive page with list of contacts. User can filtr contacts by name or surna
 This project was created as teacode recruitment task to do.
 
 **Skills used:**
+
 - React (Hooks)
 - HTML5
 - CSS3
