@@ -1,17 +1,25 @@
-function SearchBar(props){     
-     const filterTextChange =(e)=>{
-          props.filteredText(e.target.value)
-          props.filteredList(e.target.value)
-          props.resetSwitch()
-     }
-     
-return(
-     <div className='contact__searchInput'>
-          <input type='text' placeholder='Search...' value={props.filterText} onChange={filterTextChange}></input>
-     </div>
-)
-}
+import { useContext } from 'react';
 
+import { UsersContext } from '../context';
 
+const SearchBar = () => {
+  const { searchValue, setSearchValue } = useContext(UsersContext);
 
-export default SearchBar
+  const filterTextChange = (e) => {
+    setSearchValue(e.target.value.toLowerCase());
+  };
+
+  return (
+    <div className="contact--search-input">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchValue}
+        onChange={filterTextChange}
+      />
+      <button onClick={() => setSearchValue('')}>Clear</button>
+    </div>
+  );
+};
+
+export default SearchBar;
