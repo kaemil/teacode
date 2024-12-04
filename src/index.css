@@ -2,13 +2,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.contact--container {
+.contact-container {
   width: 500px;
   border: 1px solid #000000;
   margin: 16px auto 16px auto;
 }
 
-.contact--header {
+.contact-header {
   background-color: #b8b8b8;
   text-align: center;
   padding: 8px 0 8px 0;
@@ -18,12 +18,12 @@ h2 {
   margin: 0;
 }
 
-.contact--search-input {
+.contact-search-input {
   height: 32px;
   display: flex;
 }
 
-.contact--search-input input {
+.contact-search-input input {
   height: 32px;
   outline: none;
   width: 100%;
@@ -36,34 +36,34 @@ h2 {
   padding-right: 4px;
 }
 
-.contact--list-item {
+.contact-list-item {
   display: flex;
   margin: 4px 0;
 }
 
-.contact--list-item:first-of-type {
+.contact-list-item:first-of-type {
   display: flex;
   margin-top: 0;
 }
 
-.contact--list-item:last-of-type {
+.contact-list-item:last-of-type {
   display: flex;
   margin-bottom: 0;
 }
 
-.contact--list-item:hover {
+.contact-list-item:hover {
   display: flex;
   background-color: #cfcfcf;
   cursor: pointer;
 }
 
-.contact--full-name {
+.contact-full-name {
   width: calc(100% - 40px - 40px);
   padding-left: 8px;
   align-self: center;
 }
 
-.contact--checkbox {
+.contact-checkbox {
   display: flex;
   justify-content: center;
   width: 32px;
@@ -71,7 +71,7 @@ h2 {
   height: 32px;
 }
 
-.contact--avatar {
+.contact-avatar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,12 +79,12 @@ h2 {
   height: 32px;
 }
 
-.contact--avatar img {
+.contact-avatar img {
   width: 32px;
   height: 32px;
 }
 
-.contact--pagination {
+.contact-pagination {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +93,7 @@ h2 {
   border-bottom: 1px solid #000000;
 }
 
-.contact--pagination-page {
+.contact-pagination-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +102,7 @@ h2 {
   width: 32px;
 }
 
-.contact--pagination-page-switch {
+.contact-pagination-page-switch {
   height: 32px;
   width: 32px;
   align-self: center;
@@ -112,23 +112,23 @@ h2 {
   cursor: pointer;
 }
 
-.contact--pagination-page-switch:hover {
+.contact-pagination-page-switch:hover {
   background-color: #000000;
   color: #ffffff;
 }
 
-.contact--send {
+.contact-send {
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.contact--send button {
+.contact-send button {
   height: 32px;
 }
 
-.contact--loader {
+.contact-loader {
   display: flex;
   justify-content: center;
   align-items: center;

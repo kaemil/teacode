@@ -13,10 +13,10 @@ const UserItem = ({ user }) => {
   const avatarImage = avatar ? image : imagePlaceHolder;
 
   return (
-    <div className="contact--list-item" onClick={() => handleSelectedUsers(id)}>
-      <div className="contact--avatar">{avatarImage}</div>
-      <div className="contact--full-name">{`${first_name} ${last_name}`}</div>
-      <div className="contact--checkbox">
+    <div className="contact-list-item" onClick={() => handleSelectedUsers(id)}>
+      <div className="contact-avatar">{avatarImage}</div>
+      <div className="contact-full-name">{`${first_name} ${last_name}`}</div>
+      <div className="contact-checkbox">
         <input
           type="checkbox"
           checked={selectedUsersIds.includes(id)}

@@ -4,7 +4,7 @@ const SearchBar = ({ searchValue, setSearchValue }) => {
   };
 
   return (
-    <div className="contact--search-input">
+    <div className="contact-search-input">
       <input
         type="text"
         placeholder="Search..."

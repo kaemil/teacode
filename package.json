@@ -1,19 +1,18 @@
 {
   "name": "teacode",
+  "homepage": "https://kaemil.github.io/teacode/",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.13.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "lodash": "^4.17.21",
-    "node": "^16.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2",
-    "homepage": "https://kaemil.github.io/teacode/"
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "lodash": "4.17.21",
+    "node": "22.12.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "6.2.0"
   }
 }

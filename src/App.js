@@ -54,14 +54,14 @@ const App = () => {
         selectedUsersIds,
       }}
     >
-      <div className="contact--container">
-        <div className="contact--header">
+      <div className="contact-container">
+        <div className="contact-header">
           <h2>List of Contacts</h2>
         </div>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         {isLoading ? <Loader /> : <UsersList usersList={paginatedUsersList} />}
         <Pagination {...pagination} />
-        <div className="contact--send">
+        <div className="contact-send">
           <button onClick={handleUsersSubmit}>Send</button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 const Loader = () => (
-  <div className="contact--loader">
+  <div className="contact-loader">
     <span>Loading...</span>
   </div>
 );
