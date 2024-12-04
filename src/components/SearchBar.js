@@ -1,10 +1,4 @@
-import { useContext } from 'react';
-
-import { UsersContext } from '../context';
-
-const SearchBar = () => {
-  const { searchValue, setSearchValue } = useContext(UsersContext);
-
+const SearchBar = ({ searchValue, setSearchValue }) => {
   const filterTextChange = (e) => {
     setSearchValue(e.target.value.toLowerCase());
   };

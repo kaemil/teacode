@@ -1,63 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { sortBy } from 'lodash';
 import React from 'react';
 
 import { UsersContext } from './context';
 
+import usePagination from './hooks/usePagination';
+import useGetUsers from './hooks/useGetUsers';
+
 import Pagination from './components/Pagination';
 import SearchBar from './components/SearchBar';
 import UsersList from './components/UsersList';
-
-import { API_USERS, DATA_PER_PAGE } from './consts';
+import Loader from './components/Loader';
 
 const App = () => {
   const [selectedUsersIds, setSelectedUsersIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
-  const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
 
-  /**
-   * Get users from API
-   */
-  const fetchData = async () => {
-    const response = await fetch(API_USERS);
-    const data = await response.json();
+  const { users, isLoading } = useGetUsers();
 
-    if (data) {
-      setUsers(data);
-    }
-  };
+  const pagination = usePagination({ users });
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  /**
-   * Change page down
-   */
-  const handlePageDown = () => {
-    if (page > 1) {
-      setPage((prev) => prev - 1);
-    }
-  };
-
-  /**
-   * Change page up
-   */
-  const handlePageUp = () => {
-    if (page < Math.round(users.length / DATA_PER_PAGE)) {
-      setPage((prev) => prev + 1);
-    }
-  };
-
-  /**
-   * Slice date for page
-   */
-  const paginatedData = (data = [], page = 1, dataPerPage = DATA_PER_PAGE) => {
-    const startIndex = (page - 1) * dataPerPage;
-
-    return data?.slice(startIndex, startIndex + dataPerPage);
-  };
+  const { page, sliceDataPerPage } = pagination;
 
   const filteredList = users.filter(({ first_name, last_name }) => {
     const fullName = `${first_name.toLowerCase()} ${last_name.toLowerCase()}`;
@@ -67,7 +30,7 @@ const App = () => {
 
   const sortedList = sortBy(filteredList, 'last_name');
 
-  const paginatedUsersList = paginatedData(sortedList, page);
+  const paginatedUsersList = sliceDataPerPage(sortedList, page);
 
   /**
    * Handle selected users
@@ -79,6 +42,8 @@ const App = () => {
   };
 
   const handleUsersSubmit = () => {
+    if (!selectedUsersIds.length) return;
+
     window.alert(JSON.stringify(selectedUsersIds));
   };
 
@@ -87,21 +52,15 @@ const App = () => {
       value={{
         handleSelectedUsers,
         selectedUsersIds,
-        searchValue,
-        setSearchValue,
       }}
     >
       <div className="contact--container">
         <div className="contact--header">
           <h2>List of Contacts</h2>
         </div>
-        <SearchBar />
-        <UsersList usersList={paginatedUsersList} />
-        <Pagination
-          page={page}
-          handlePageDown={handlePageDown}
-          handlePageUp={handlePageUp}
-        />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+        {isLoading ? <Loader /> : <UsersList usersList={paginatedUsersList} />}
+        <Pagination {...pagination} />
         <div className="contact--send">
           <button onClick={handleUsersSubmit}>Send</button>
         </div>
