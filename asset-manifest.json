@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/teacode/static/css/main.55bc46f0.css",
-    "main.js": "/teacode/static/js/main.2a0ea701.js",
+    "main.css": "/teacode/static/css/main.43c1044b.css",
+    "main.js": "/teacode/static/js/main.5171d4cb.js",
     "index.html": "/teacode/index.html",
-    "main.55bc46f0.css.map": "/teacode/static/css/main.55bc46f0.css.map",
-    "main.2a0ea701.js.map": "/teacode/static/js/main.2a0ea701.js.map"
+    "main.43c1044b.css.map": "/teacode/static/css/main.43c1044b.css.map",
+    "main.5171d4cb.js.map": "/teacode/static/js/main.5171d4cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.55bc46f0.css",
-    "static/js/main.2a0ea701.js"
+    "static/css/main.43c1044b.css",
+    "static/js/main.5171d4cb.js"
   ]
 }
