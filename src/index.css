@@ -128,7 +128,8 @@ h2 {
   height: 32px;
 }
 
-.contact-loader {
+.contact-loader,
+.contact-no-data {
   display: flex;
   justify-content: center;
   align-items: center;

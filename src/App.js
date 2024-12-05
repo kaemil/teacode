@@ -62,7 +62,12 @@ const App = () => {
         {isLoading ? <Loader /> : <UsersList usersList={paginatedUsersList} />}
         <Pagination {...pagination} />
         <div className="contact-send">
-          <button onClick={handleUsersSubmit}>Send</button>
+          <button
+            disabled={!selectedUsersIds.length}
+            onClick={handleUsersSubmit}
+          >
+            Send
+          </button>
         </div>
       </div>
     </UsersContext.Provider>
