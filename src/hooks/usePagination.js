@@ -36,7 +36,7 @@ const usePagination = ({ users }) => {
     return data.slice(startIndex, startIndex + dataPerPage);
   };
 
-  return { handlePageDown, handlePageUp, sliceDataPerPage, page };
+  return { handlePageDown, handlePageUp, sliceDataPerPage, page, setPage };
 };
 
 export default usePagination;

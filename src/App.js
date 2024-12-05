@@ -20,7 +20,7 @@ const App = () => {
 
   const pagination = usePagination({ users });
 
-  const { page, sliceDataPerPage } = pagination;
+  const { page, sliceDataPerPage, setPage } = pagination;
 
   const filteredList = users.filter(({ first_name, last_name }) => {
     const fullName = `${first_name.toLowerCase()} ${last_name.toLowerCase()}`;
@@ -58,7 +58,11 @@ const App = () => {
         <div className="contact-header">
           <h2>List of Contacts</h2>
         </div>
-        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+        <SearchBar
+          setPage={setPage}
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
         {isLoading ? <Loader /> : <UsersList usersList={paginatedUsersList} />}
         <Pagination {...pagination} />
         <div className="contact-send">

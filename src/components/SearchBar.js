@@ -1,6 +1,7 @@
-const SearchBar = ({ searchValue, setSearchValue }) => {
+const SearchBar = ({ searchValue, setSearchValue, setPage }) => {
   const filterTextChange = (e) => {
     setSearchValue(e.target.value.toLowerCase());
+    setPage(1);
   };
 
   return (
